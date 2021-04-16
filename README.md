@@ -1,5 +1,5 @@
 # loclin
-## One-d covariate local linear ridged estimator for E(Y|X) and local quadratic ridged estimator for E'(Y|X) (the first derivative).
+## The local linear ridged estimator for E(Y|X) and the local quadratic ridged estimator for E'(Y|X) (the first derivative) with one-d covariate.
 
 
 ## *Features*:
