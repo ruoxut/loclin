@@ -109,6 +109,9 @@ else
     C_2K = (3/(8*sqrt(pi)))^(1/7);
 end
 hCV3 = C_2K * (Var / (length(X) * abs(Theta_24)))^(1/7); 
+if Theta_24 == 0
+    hCV3 = 2*(b-a);
+end
 
 fCV3 = zeros(length(X),1); 
 ffCV3 = zeros(length(X),1);
@@ -152,11 +155,17 @@ for i = 1:length(X)
     end
 end
 
-Theta1 = sum(fCV3.^2.*Wei)./length(X);
+Theta1 = sum(fCV3.^2.*Wei)/length(X);
 h1 = (Var./(2.*sqrt(pi).*Theta1.*length(X))).^(1/5);
-   
-Theta2 = sum(ffCV3.^2.*Wei)./length(X);
+if Theta1 == 0
+    h1 = 2*(b-a);
+end
+
+Theta2 = sum(ffCV3.^2.*Wei)/length(X);
 h2 = 0.8843.*(Var./(Theta2.*length(X))).^(1/7);
+if Theta2 == 0
+    h2 = 2*(b-a);
+end
 
 delta = length(unique(X))^(-2);
 for i = 1:length(t)
