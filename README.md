@@ -3,7 +3,7 @@
 
 
 ## *Features*:
-1. Fully data-driven bandwidth selection using the pulg-in idea with cross validation pilot bandwidth.
+1. Fully data-driven bandwidth selection using the plug-in idea with cross validation pilot bandwidth.
 2. There is a ridge term in the denomiator of the final estimate to prevent a too small denominator.
 3. The kernel is Gaussian.
 
