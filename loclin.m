@@ -1,15 +1,14 @@
 function [ t,f1,f2 ] = loclin( X,Y,a,b )
-%The function performs the 1-d covariate local linear ridged estimator for E(Y|X) and
-%the local quadratic ridged estimator for E'(Y|X).  
-%Input:
-%X: n*1 covariate vector
-%Y: n*1 outcome vector
-%[a,b]: the interval for which we estimate E(Y|X), [q_0.025 and q_0.975] as
-%default
-%Output:
-%t: the vector where we evaluate the estimator
-%f1: the vector of estimated E(Y|X=x)
-%f2: the vector of estimated E'(Y|X=x)
+% The function performs the 1-d covariate ridged local linear estimator for E(Y|X) and
+% the local quadratic ridged estimator for E'(Y|X).  
+% Input:
+% X: n*1 covariate vector;
+% Y: n*1 outcome vector;
+% [a,b]: the interval for which we estimate E(Y|X), [q_0.025 and q_0.975] as default.
+% Output:
+% t: the vector where we evaluate the estimator;
+% f1: the vector of estimated E(Y|X=x);
+% f2: the vector of estimated E'(Y|X=x).
 
 if nargin < 3
     a = quantile(X,0.025);
